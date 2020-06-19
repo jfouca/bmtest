@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+    php-fpm:
+        build: docker/php-fpm
+        container_name: bmtestfoucault-php
+        working_dir: /var/www/bmtestfoucault
+        ports:
+            - 9004:9000
+        environment:
+            APP_ENV: "dev"
+        volumes:
+        - ./:/var/www/bmtestfoucault
